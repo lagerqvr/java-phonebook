@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("----------------------------------");
         System.out.println("\nPHONE BOOK v1.0");
-        System.out.print("\nHur många nummer vill du registrera?");
+        System.out.print("\nHow many phone numbers do you want to register?");
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.nextLine();
@@ -16,11 +16,11 @@ public class Main {
         for (int i = 0; i < n; i++) {
 
             System.out.println("Person " + (i+1));
-            System.out.println("Förnamn: ");
+            System.out.println("First tname: ");
             String firstName = scan.nextLine();
-            System.out.println("Efternamn: ");
+            System.out.println("Last name: ");
             String lastName = scan.nextLine();
-            System.out.println("Telefonnummer: ");
+            System.out.println("Phone number: ");
             String phone = scan.nextLine();
 
             pBook[i] = new Person(firstName, lastName, phone );
@@ -29,7 +29,7 @@ public class Main {
         boolean exit = false;
 
         while(!exit) {
-            System.out.println("Sök i telefonboken (avsluta med \"exit\"):");
+            System.out.println("Search in the phone directory (exit with \"exit\"):");
             String input = scan.nextLine();
             if(input.equals("exit")) {
                 exit = true;
@@ -44,12 +44,12 @@ public class Main {
         boolean contactFound = false;
         for(Person p : pBook) {
             if(p.lastName.contains(searchString)) {
-                System.out.println("Förnamn: " + p.firstName + "\nEfternamn: " + p.lastName + "\ntfn: " + p.phone + "\n\n");
+                System.out.println("First name: " + p.firstName + "\nLast name: " + p.lastName + "\ntfn: " + p.phone + "\n\n");
                 contactFound = true;
             }
         }
         if(!contactFound) {
-            System.out.println("Hittas ingen i telefonboken med efternamnet \"" + searchString + "\"");
+            System.out.println("Can't find anyone in the phone directory with the last name \"" + searchString + "\"");
         }
     }
 }
