@@ -16,7 +16,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
 
             System.out.println("Person " + (i+1));
-            System.out.println("First tname: ");
+            System.out.println("First name: ");
             String firstName = scan.nextLine();
             System.out.println("Last name: ");
             String lastName = scan.nextLine();
